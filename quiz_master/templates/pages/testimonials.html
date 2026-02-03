@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Testimonials and Success Stories - Smart Quiz App</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2463eb",
+                        "background-light": "#f8fafc",
+                        "background-dark": "#111621",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .masonry-grid {
+            column-count: 3;
+            column-gap: 24px;
+        }
+        @media (max-width: 1024px) {
+            .masonry-grid { column-count: 2; }
+        }
+        @media (max-width: 640px) {
+            .masonry-grid { column-count: 1; }
+        }
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 24px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#0e121b] dark:text-white transition-colors duration-300">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-solid border-[#e7ebf3] dark:border-gray-800">
+<div class="max-w-[1280px] mx-auto px-6 h-16 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="text-primary">
+<svg class="size-8" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-tight">Smart Quiz App</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Product</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Pricing</a>
+<a class="text-sm font-medium text-primary" href="#">Testimonials</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Case Studies</a>
+</nav>
+<div class="flex items-center gap-3">
+<button class="hidden sm:flex h-10 px-5 items-center justify-center rounded-lg bg-[#e7ebf3] dark:bg-gray-800 text-sm font-bold transition-all hover:bg-gray-200">Log In</button>
+<button class="flex h-10 px-5 items-center justify-center rounded-lg bg-primary text-white text-sm font-bold transition-all hover:opacity-90 shadow-md shadow-primary/20">Get Started</button>
+</div>
+</div>
+</header>
+<main class="max-w-[1200px] mx-auto px-6 py-16">
+<!-- Hero Section -->
+<section class="mb-16">
+<div class="relative overflow-hidden rounded-xl bg-primary px-8 py-20 text-center text-white" data-alt="Group of diverse students studying together happily" style='background-image: linear-gradient(rgba(36, 99, 235, 0.9), rgba(36, 99, 235, 0.95)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDmAB-FBrmex8mmSidr9IuMpgWses7mwcLVBm3BKmqlORixO2otaTWk9Fmol9-xau3NXLUvEWMSK8fKl6iegMCMC0poN8MdkmXEbrTea6Sqw_qHWiiB9Dkn4A4aaK9lglMgIfiEgejup2Oc6Fn5TeJjo9M7-aGsyEWC4f4z3qR35wN_43piiwxYuSUey2Zuv88o2UAthVeLSl9YcuVk77M03vkQ6pCzDuv1TTVpoQp3_HVq95xeEstayGhBwQFoTNC-N1akiVIBZ5c"); background-size: cover; background-position: center;'>
+<div class="max-w-3xl mx-auto">
+<h1 class="text-4xl md:text-6xl font-black mb-6 tracking-tight leading-tight">
+                        Trusted by 50,000+ Learners
+                    </h1>
+<p class="text-lg opacity-90 mb-8 leading-relaxed">
+                        Discover how students and institutions around the world are transforming their learning experience with Smart Quiz App's data-driven insights.
+                    </p>
+<div class="flex flex-wrap justify-center gap-4">
+<button class="h-12 px-8 rounded-lg bg-white text-primary font-bold transition-all hover:bg-gray-100 flex items-center gap-2">
+<span>Share Your Story</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<button class="h-12 px-8 rounded-lg bg-primary border-2 border-white/30 text-white font-bold transition-all hover:bg-white/10">
+                            Download Report
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Student Testimonials Section -->
+<section class="mb-16">
+<div class="flex items-center justify-between mb-8 px-2">
+<h2 class="text-2xl font-bold tracking-tight">Student Testimonials</h2>
+<div class="flex items-center gap-2 text-primary">
+<span class="text-sm font-semibold">4.9/5 Average Rating</span>
+<div class="flex">
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span class="material-symbols-outlined text-[18px]">star</span>
+</div>
+</div>
+</div>
+<div class="masonry-grid">
+<!-- Card 1 -->
+<div class="masonry-item bg-white dark:bg-gray-900 p-6 rounded-lg shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-3 mb-4">
+<div class="size-10 rounded-full bg-cover" data-alt="Portrait of Sarah Jenkins" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuApsRC7RL3DTHL0HDbOD3SKAPhbm0g982XgLCc5qRhKYWe0T4P96Bdjo-4UyXC03BHtVaZXdVHkjMU16mUAci3PFjJLa40EJ7Z8zmEKl8-2XisGbTZpdFH8uBLlYOojcIbnnLjiZS8yik-b_nD3P5yQNkrIYGxVuq43xgw2ob5LkV6RoEXKEfanTlTMW5gMsBUW83IPGZBMjSBPIg19CFeEEbOQI45u5b8t-EhpJPSO4tTsb5qAusYOnk7etZEJIML3P3TIedqHdPA')"></div>
+<div>
+<h4 class="text-sm font-bold">Sarah Jenkins</h4>
+<p class="text-xs text-gray-500 dark:text-gray-400">Computer Science Student</p>
+</div>
+</div>
+<div class="flex text-primary mb-3">
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+</div>
+<p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">
+                        "This app changed how I study for finals. The adaptive quizzes are a game changer! I went from a B- to an A in my Algorithms course."
+                    </p>
+</div>
+<!-- Card 2 -->
+<div class="masonry-item bg-white dark:bg-gray-900 p-6 rounded-lg shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-3 mb-4">
+<div class="size-10 rounded-full bg-cover" data-alt="Portrait of Marcus Chen" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBdBEe7UuhnYAxfK9EAaoGR9HozAO5Hm4ZWw-e9QCdHofi5EnnGLxlQRqsXPkqGtOmU0eGG_hmERMT6RE8yra0Je82oHdHmFXZ2mcm5KCco8qgb5q-y1kJHqnnNdepBXKgVg8BMb4oW9eq9Um-bUN7aN-4gXFk72ZGD0xvbbKKj4KNarUd7WKiBFmBhX4UyO0jagaHlF9T0KkEl-JvU7nrkgudqWZQrvXlaE9w_1Phbwvx14GmKMmtWvjm12U_4K4YlC5V7ae7LHWo')"></div>
+<div>
+<h4 class="text-sm font-bold">Marcus Chen</h4>
+<p class="text-xs text-gray-500 dark:text-gray-400">Pre-Med Student</p>
+</div>
+</div>
+<div class="flex text-primary mb-3">
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+</div>
+<p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">
+                        "Simple, intuitive, and effective. My grades have improved significantly since I started using the Smart Quiz App. The anatomy flashcards are incredibly detailed."
+                    </p>
+</div>
+<!-- Card 3 -->
+<div class="masonry-item bg-white dark:bg-gray-900 p-6 rounded-lg shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-3 mb-4">
+<div class="size-10 rounded-full bg-cover" data-alt="Portrait of Elena Rodriguez" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCmk78DiaaLb9ow1uf7px7dO5Tobh-sWksSijOaab6KqadWoONZC6XYkggxxYIiBDF5iwNVV8ukZatkjEe47DdB45Xe0xB2pCps1og2QsmQPtY0TaaFENBRQ5jJ5bwOkkQ6ktqnYvMbYWDj08FYxzuAlOmnc6KUk-7JajbxKMwpfHxBGD1j_Bkw2hcDQAFk9wGCuHn9gXnL2LIHibZBv5XBjDh5Pp34UBMdKwt3jSdgWgKbwA8fyZAdvq5R8FgrkPObnJUHB5peMW8')"></div>
+<div>
+<h4 class="text-sm font-bold">Elena Rodriguez</h4>
+<p class="text-xs text-gray-500 dark:text-gray-400">History Major</p>
+</div>
+</div>
+<div class="flex text-primary mb-3">
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+</div>
+<p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">
+                        "I love the gamified experience. It makes learning feel less like a chore and more like a challenge that I actually want to beat every morning."
+                    </p>
+</div>
+<!-- Card 4 -->
+<div class="masonry-item bg-white dark:bg-gray-900 p-6 rounded-lg shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-3 mb-4">
+<div class="size-10 rounded-full bg-cover" data-alt="Portrait of David Park" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDkNXywMzojEita5WMxi7RyVk-BCPhBz5clC-up_QbdsanLj714M0nCTR0OR4HoRI1Xt6O0sSJoktsoms-iQdcffFljHKu-N0-2W7wv4HIoQKmJS4L45KBFUYWiNF6L02gLRxFtAeX0C4XPYX7Q6EW0zMaTt5ty76MGstaH8_YxFWibgTnuYNzH9Fx0cxk6PBfq_2RHlL0vB4aNEbuBF4PoRBUJi2u8yU1EgoKI7yLAe98Mn9AwgwHXrBtr3E_f9x6xGKpYPlkmQhE')"></div>
+<div>
+<h4 class="text-sm font-bold">David Park</h4>
+<p class="text-xs text-gray-500 dark:text-gray-400">High School Senior</p>
+</div>
+</div>
+<div class="flex text-primary mb-3">
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+</div>
+<p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">
+                        "Helped me prepare for the SATs in just 3 months. The performance analytics told me exactly which areas of math I needed to focus on. Best investment ever!"
+                    </p>
+</div>
+<!-- Card 5 -->
+<div class="masonry-item bg-white dark:bg-gray-900 p-6 rounded-lg shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-3 mb-4">
+<div class="size-10 rounded-full bg-cover" data-alt="Portrait of Maya Thompson" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBgJv6olDtQ5CZFo74nO61Vum4cjl_hEBge0gIyJzvOmtKsprBxb45KBgHNWNBsLT4v5fNi8W40MAbZ19TjZE7fVyd7doqRUi3BlYEFt4QQsyk4vSKPDgdAoqTnkGCzEiDsA9O7Ty6UfP04V7qC-FNtIEXOGpTChHf_B3akDrkDO00l4w7O1vM8OtHQXAGNSPM_3h8t6ISfY9uDHW60sGxXMRyxCQnXDotGzVCRLhD9xgEoaPZPKn6JbPA1LVbbqtg6HRt14T3oz3A')"></div>
+<div>
+<h4 class="text-sm font-bold">Maya Thompson</h4>
+<p class="text-xs text-gray-500 dark:text-gray-400">Law Student</p>
+</div>
+</div>
+<div class="flex text-primary mb-3">
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+</div>
+<p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">
+                        "The spaced repetition system is perfect for memorizing case law. I can study on the subway or between lectures. It's incredibly convenient."
+                    </p>
+</div>
+<!-- Card 6 -->
+<div class="masonry-item bg-white dark:bg-gray-900 p-6 rounded-lg shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-3 mb-4">
+<div class="size-10 rounded-full bg-cover" data-alt="Portrait of James Wilson" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCrrLMOQy6Up7B1L2LjVLX2yo0do2wsyqEMMtiTB6s4QHIpmyTI304xnco1hW-0b8LdMmSS23ihCWLIoDaQPrZIsaDWRwSwSQD7jt2JRDf8ByEi4vXkEukmIyzPsLNpfn8sBfwlLWiCm7h9-8WRaTGcp7mkruIR4DaBIxhfty5yTWjpArOzHxGih7HAVEQa89QhbDCGC1DiGwYPTjB88QBQal0zuVfehNpd7gicMrOOtleJ6HgvPsQ-LQ9PBnVoRCP2H6wyraxa8mo')"></div>
+<div>
+<h4 class="text-sm font-bold">James Wilson</h4>
+<p class="text-xs text-gray-500 dark:text-gray-400">Adult Learner</p>
+</div>
+</div>
+<div class="flex text-primary mb-3">
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+</div>
+<p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">
+                        "As someone returning to school after 10 years, this app gave me the structure I needed to catch up with my peers. Highly recommend!"
+                    </p>
+</div>
+</div>
+</section>
+<!-- Institutional Case Studies Section -->
+<section class="mb-16">
+<h2 class="text-2xl font-bold tracking-tight mb-8 px-2">Institutional Case Studies</h2>
+<div class="flex flex-col gap-8">
+<!-- Case Study 1 -->
+<div class="flex flex-col md:flex-row bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-md border border-gray-100 dark:border-gray-800 min-h-[320px]">
+<div class="md:w-2/5 relative">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Modern university campus building" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCTkYff8SShtFE8DT7GkZx75ygVT0K0QyU44UkLHEi7VVyJjLLhgPvS1nIEdRNyTDc9NajlrThCHDE56AOkNUhSIP_yoLj5FVLqda_f9MIgRR7C1kEJVHRHMN3ECjgRpPIiJ224siA52FMJWe1x3BMk0LClxIZpqE2gj5S5CHV5BDWx-9v0NIDdB0ffZtQqyBUxUhhZsnltjhQbWUcXCCjGCv-xmDsy4F2VahNHhdv6hx5tEUVXp23n1am4OeMpQEbgIhpz1do21Tg')"></div>
+<div class="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Education</div>
+</div>
+<div class="md:w-3/5 p-8 flex flex-col justify-between">
+<div>
+<h3 class="text-2xl font-bold mb-3">Oakwood University Case Study</h3>
+<p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                                How Oakwood University implemented Smart Quiz across their Biology department to personalize learning for 2,400+ students.
+                            </p>
+<div class="flex items-center gap-6 mb-8">
+<div class="flex flex-col">
+<span class="text-3xl font-black text-primary">+42%</span>
+<span class="text-xs font-medium text-gray-500 uppercase tracking-wide">Test Scores</span>
+</div>
+<div class="w-px h-10 bg-gray-200 dark:bg-gray-700"></div>
+<div class="flex flex-col">
+<span class="text-3xl font-black text-primary">85%</span>
+<span class="text-xs font-medium text-gray-500 uppercase tracking-wide">Retention Rate</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex -space-x-2">
+<div class="size-8 rounded-full border-2 border-white dark:border-gray-900 bg-cover" data-alt="Staff avatar 1" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCHgSuuticpePO1faprLuTdBfWY3it8TvNj-YVESx02BnHGzjXm-zqMm-0Q-zr3vMrcO34tTLQHoqW7EAqWU_O_rqV-0psP28AIUVtPgcvheKF-JMjg-QHjcW_lD67r3xpJkXzQEV1PIkCX6Mm2pEeyDSa4bpWzkCdN4uTIGt654UF-pi_1kHrXN8uEfCX6X9vuqqTkIvMUmZ6Dlc57OKltuy8YflX4Mx7-Gm5W2usV5aoHY5HlCiONIqCqXSGEpD6RH-fsi_tBG74')"></div>
+<div class="size-8 rounded-full border-2 border-white dark:border-gray-900 bg-cover" data-alt="Staff avatar 2" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD40sW4XGbfh0i5uL7F4POos97dAaeXpDUOJftwY51zsdWqeLDUQNrS9v_WBsAIa3K52Z7y21ic3nKa5cengIMxXidczMx6yMtVp6RxQ4OkV4RXawYUBLhPxmh6cYClxV5A4VuPk388rj4heiHN05wbHdB2SY_tvLsyrXG23VmscMuwe6SEze0ISIwc0ijXnwHAQMp0VhLKJnoM0dX_Gj15uhNqCVIwg-eU0QjfnShvfG7TC1JYETXJvekin5x7U3pmlFpk5blfdo4')"></div>
+<div class="size-8 rounded-full border-2 border-white dark:border-gray-900 bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-[10px] font-bold">+3</div>
+</div>
+<button class="flex items-center gap-2 bg-primary text-white px-6 py-2.5 rounded-lg font-bold text-sm transition-all hover:opacity-90">
+                                Read Full Story
+                                <span class="material-symbols-outlined text-sm">open_in_new</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Case Study 2 -->
+<div class="flex flex-col md:flex-row bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-md border border-gray-100 dark:border-gray-800 min-h-[320px]">
+<div class="md:w-2/5 relative">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="High school classroom environment" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDUNgJWamYYq-evhrDSFRpG8QC7OM7d3l9bZnhSnyuIuSJozgBHvXf9GNqEuzvtW78zghT6wzkToaM1Gk98lFAFKoojF8O0nhCFQtmJ_1_EAb0fh6issz5fMtGoZuyiUJ3RHF52dfW8YzNyIAuJIXiTUQ_AmpU147lcUlLhgWkxD6Uy6WiICCPKjy4v819n8oFN1L3UqSBzVrEde3uqN0X7i8GdcI705UVbrpz_rwMUEasSZL_NGknY5TFHVtFgiTcoTjfjJZ80E-g')"></div>
+<div class="absolute top-4 left-4 bg-[#059669] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Secondary</div>
+</div>
+<div class="md:w-3/5 p-8 flex flex-col justify-between">
+<div>
+<h3 class="text-2xl font-bold mb-3">Westside High Performance</h3>
+<p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                                Bridging the gap in standardized testing for underprivileged districts through accessible mobile-first quiz technology.
+                            </p>
+<div class="flex items-center gap-6 mb-8">
+<div class="flex flex-col">
+<span class="text-3xl font-black text-[#059669]">2.5x</span>
+<span class="text-xs font-medium text-gray-500 uppercase tracking-wide">Faster Progress</span>
+</div>
+<div class="w-px h-10 bg-gray-200 dark:bg-gray-700"></div>
+<div class="flex flex-col">
+<span class="text-3xl font-black text-[#059669]">92%</span>
+<span class="text-xs font-medium text-gray-500 uppercase tracking-wide">Student Engagement</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex items-center gap-3">
+<span class="text-xs text-gray-400 font-medium italic">"Transformed our classroom culture."</span>
+</div>
+<button class="flex items-center gap-2 bg-primary text-white px-6 py-2.5 rounded-lg font-bold text-sm transition-all hover:opacity-90">
+                                Read Full Story
+                                <span class="material-symbols-outlined text-sm">open_in_new</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="mt-24 text-center">
+<h2 class="text-3xl font-bold mb-4">Ready to boost your results?</h2>
+<p class="text-gray-600 dark:text-gray-400 mb-10 max-w-lg mx-auto">Join the thousands of students and institutions already using Smart Quiz App to achieve their academic goals.</p>
+<div class="flex flex-wrap justify-center gap-4">
+<button class="h-14 px-10 rounded-xl bg-primary text-white font-bold text-lg transition-all hover:scale-105 shadow-xl shadow-primary/20">
+                    Get Started Free
+                </button>
+<button class="h-14 px-10 rounded-xl bg-white dark:bg-gray-800 text-[#0e121b] dark:text-white font-bold text-lg border border-gray-200 dark:border-gray-700 transition-all hover:bg-gray-50">
+                    Talk to Sales
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-white dark:bg-gray-950 border-t border-gray-200 dark:border-gray-800 py-12 px-6 mt-20">
+<div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-3">
+<div class="text-primary/50">
+<svg class="size-6" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor"></path>
+</svg>
+</div>
+<span class="font-bold text-gray-500">Smart Quiz App © 2024</span>
+</div>
+<div class="flex gap-8">
+<a class="text-xs font-semibold text-gray-400 hover:text-primary uppercase tracking-widest" href="#">Privacy Policy</a>
+<a class="text-xs font-semibold text-gray-400 hover:text-primary uppercase tracking-widest" href="#">Terms of Service</a>
+<a class="text-xs font-semibold text-gray-400 hover:text-primary uppercase tracking-widest" href="#">Contact Us</a>
+</div>
+<div class="flex gap-4">
+<button class="size-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 text-gray-500 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg">public</span>
+</button>
+<button class="size-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 text-gray-500 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg">mail</span>
+</button>
+</div>
+</div>
+</footer>
+</body></html>
