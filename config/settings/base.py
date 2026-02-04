@@ -97,6 +97,7 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     "quiz_master.users",
     # Your stuff: custom apps go here
+    "quiz_master.assessments",
 ]
 
 # tailwind stuff
