@@ -1,0 +1,47 @@
+{% load static i18n %}
+
+{% partialdef navbar %}
+<header class="sticky top-0 z-50 w-full border-b border-solid border-[#e7ebf3]  bg-white/80  backdrop-blur-md">
+  <div class="max-w-[1200px] mx-auto flex items-center justify-between px-6 py-4">
+    <div class="flex items-center gap-2">
+      <div class="size-8 bg-sky-600 rounded-lg flex items-center justify-center text-white">
+        <span class="material-symbols-outlined text-xl">school</span>
+      </div>
+      <h2 class="text-[#0e121b]  text-xl font-bold tracking-tight">
+        <a class="nav-link" href="{% url 'home' %}">Smart Quiz</a>
+      </h2>
+    </div>
+    <nav class="hidden md:flex items-center gap-8">
+      <a class="text-sm font-medium hover:text-sky-600 transition-colors"
+         href="{% url 'features' %}">Features</a>
+      <a class="text-sm font-medium hover:text-sky-600 transition-colors"
+         href="{% url 'pricing' %}">Pricing</a>
+      {% if request.user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link"
+             href="{% url 'users:detail' request.user.username %}">{% translate "My Profile" %}</a>
+        </li>
+        <li class="nav-item">
+          {# URL provided by django-allauth/account/urls.py #}
+          <a class="nav-link" href="{% url 'account_logout' %}">{% translate "Sign Out" %}</a>
+        </li>
+      {% else %}
+        {% if ACCOUNT_ALLOW_REGISTRATION %}
+          <li class="nav-item">
+            {# URL provided by django-allauth/account/urls.py #}
+            <a id="sign-up-link" class="nav-link" href="{% url 'account_signup' %}">{% translate "Sign Up" %}</a>
+          </li>
+        {% endif %}
+        <li class="nav-item">
+          {# URL provided by django-allauth/account/urls.py #}
+          <a id="log-in-link" class="nav-link" href="{% url 'account_login' %}">{% translate "Sign In" %}</a>
+        </li>
+      {% endif %}
+    </nav>
+    <!-- Mobile Toggle Placeholder -->
+    <button class="md:hidden p-2">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </div>
+</header>
+{% endpartialdef %}
