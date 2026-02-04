@@ -8,11 +8,21 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
-    path("features/", TemplateView.as_view(template_name="pages/features.html"), name="features"),
-    path("pricing/", TemplateView.as_view(template_name="pages/pricing.html"), name="pricing"),
-    path("testimonials/", TemplateView.as_view(template_name="pages/testimonials.html"), name="testimonials"),
-
-
+    path(
+        "features/",
+        TemplateView.as_view(template_name="pages/features.html"),
+        name="features",
+    ),
+    path(
+        "pricing/",
+        TemplateView.as_view(template_name="pages/pricing.html"),
+        name="pricing",
+    ),
+    path(
+        "testimonials/",
+        TemplateView.as_view(template_name="pages/testimonials.html"),
+        name="testimonials",
+    ),
     path(
         "about/",
         TemplateView.as_view(template_name="pages/about.html"),
@@ -50,6 +60,8 @@ if settings.DEBUG:
             kwargs={"exception": Exception("Page not Found")},
         ),
         path("500/", default_views.server_error),
+        # Include django_browser_reload URLs only in DEBUG mode
+        path("__reload__/", include("django_browser_reload.urls")),
     ]
     if "debug_toolbar" in settings.INSTALLED_APPS:
         import debug_toolbar
