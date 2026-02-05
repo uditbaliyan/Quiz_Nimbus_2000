@@ -176,6 +176,7 @@ dependencies = [
     "gunicorn==25.0.1",
     "hiredis==3.3.0",
     "pillow==12.1.0",
+    "pytest>=9.0.2",
     "python-slugify==8.0.4",
     "redis==7.1.0",
     "whitenoise==6.11.0",
