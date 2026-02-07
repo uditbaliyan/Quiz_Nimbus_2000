@@ -92,6 +92,8 @@ THIRD_PARTY_APPS = [
     "allauth.socialaccount",
     "tailwind",
     "theme",
+    "nested_admin",
+    "django_htmx",
 ]
 
 LOCAL_APPS = [
