@@ -1,6 +1,27 @@
+import itertools
+
+from django.core.validators import MinLengthValidator
 from django.db import models
 from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
+
+SLUG_GENERATION_ERROR = "Failed to generate unique slug"
+
+
+def generate_unique_slug(instance, field, slug_field="slug") -> str:
+    base = slugify(field)
+    slug = base
+    model = instance.__class__
+
+    for i in itertools.count(1):
+        qs = model.objects.filter(**{slug_field: slug}).exclude(pk=instance.pk)
+
+        if not qs.exists():
+            return slug
+
+        slug = f"{base}-{i}"
+
+    raise RuntimeError(SLUG_GENERATION_ERROR)
 
 
 class Difficulty(models.TextChoices):
@@ -10,8 +31,8 @@ class Difficulty(models.TextChoices):
 
 
 class Subject(models.Model):
-    name = models.CharField(max_length=50)
-    description = models.CharField(max_length=100)
+    name = models.CharField(max_length=50, validators=[MinLengthValidator(3)])
+    description = models.CharField(max_length=100, validators=[MinLengthValidator(20)])
     slug = models.SlugField(unique=True, blank=False)
 
     def __str__(self):
@@ -19,13 +40,13 @@ class Subject(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.slug:
-            self.slug = slugify(self.name)
+            self.slug = generate_unique_slug(self, self.name)
         super().save(*args, **kwargs)
 
 
 class Topic(models.Model):
-    name = models.CharField(max_length=50)
-    description = models.CharField(max_length=100)
+    name = models.CharField(max_length=50, validators=[MinLengthValidator(3)])
+    description = models.CharField(max_length=100, validators=[MinLengthValidator(20)])
     difficulty = models.CharField(max_length=1, choices=Difficulty, default="E")
     slug = models.SlugField(unique=True, blank=False)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -40,15 +61,15 @@ class Topic(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.slug:
-            self.slug = slugify(self.name)
+            self.slug = generate_unique_slug(self, self.name)
         super().save(*args, **kwargs)
 
 
 class Quiz(models.Model):
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50, validators=[MinLengthValidator(3)])
     slug = models.SlugField(unique=True, blank=False)
     difficulty = models.CharField(max_length=1, choices=Difficulty, default="E")
-    description = models.CharField(max_length=100)
+    description = models.CharField(max_length=100, validators=[MinLengthValidator(20)])
 
     topic = models.ForeignKey(Topic, on_delete=models.CASCADE, related_name="quizzes")
 
@@ -60,7 +81,7 @@ class Quiz(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.slug:
-            self.slug = slugify(self.name)
+            self.slug = generate_unique_slug(self, self.name)
         super().save(*args, **kwargs)
 
 
@@ -85,6 +106,13 @@ class Choice(models.Model):
     is_correct = models.BooleanField(default=False)
 
     class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=["question"],
+                condition=models.Q(is_correct=True),
+                name="unique_correct_choice_per_question",
+            )
+        ]
         verbose_name = "Choice"
         verbose_name_plural = "Choices"
 

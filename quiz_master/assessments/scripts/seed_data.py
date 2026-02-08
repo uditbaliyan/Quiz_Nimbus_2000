@@ -1,4 +1,3 @@
-from django.utils.text import slugify
 from faker import Faker
 
 from quiz_master.assessments.models import Choice
@@ -9,19 +8,6 @@ from quiz_master.assessments.models import Subject
 from quiz_master.assessments.models import Topic
 
 fake = Faker()
-
-
-def unique_slug(model, name):
-    base_slug = slugify(name)
-    slug = base_slug
-    counter = 1
-
-    while model.objects.filter(slug=slug).exists():
-        slug = f"{base_slug}-{counter}"
-        counter += 1
-
-    return slug
-
 
 # -------- CONFIG --------
 SUBJECTS = 5
@@ -38,7 +24,6 @@ def run():
         subject = Subject.objects.create(
             name=subject_name,
             description=fake.sentence(),
-            slug=unique_slug(Subject, subject_name),
         )
 
         for _ in range(TOPICS_PER_SUBJECT):
@@ -48,7 +33,6 @@ def run():
                 description=fake.sentence(),
                 difficulty=fake.random_element(Difficulty.values),
                 subject=subject,
-                slug=unique_slug(Topic, topic_name),
             )
 
             for _ in range(QUIZZES_PER_TOPIC):
@@ -58,7 +42,6 @@ def run():
                     description=fake.sentence(),
                     difficulty=fake.random_element(Difficulty.values),
                     topic=topic,
-                    slug=unique_slug(Quiz, quiz_name),
                 )
 
                 for _ in range(QUESTIONS_PER_QUIZ):
