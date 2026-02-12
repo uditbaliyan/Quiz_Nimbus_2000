@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Physics Topic Selection | QuizMaster
+{% endblock title %}
+{% block bodyclass %}
+  bg-white min-h-screen font-display
+{% endblock bodyclass %}
+{% block main %}
+  <!-- Top Navigation Bar -->
+  <main class="flex flex-1 justify-center py-8">
+    <div class="w-full max-w-[960px] flex flex-col px-4 md:px-0">
+      <!-- Breadcrumbs -->
+      <div class="flex flex-wrap items-center gap-2 mb-6">
+        <a class="text-slate-500 text-sm font-medium hover:underline"
+           href="{% url 'assessments:home' %}">Home</a>
+        <span class="material-symbols-outlined text-slate-400 text-sm">chevron_right</span>
+        <a class="text-slate-500 text-sm font-medium hover:underline"
+           href="{% url 'assessments:subjects' %}">Practice</a>
+        <span class="material-symbols-outlined text-slate-400 text-sm">chevron_right</span>
+        <span class="text-slate-900 text-sm font-semibold">Physics</span>
+      </div>
+      <!-- Page Heading -->
+      <div class="flex flex-col gap-2 mb-8">
+        <h1 class="text-slate-900 text-4xl font-black tracking-tight">Physics Topics</h1>
+        <p class="text-slate-500 text-lg">
+          Select a sub-topic to continue your mastery and improve cognitive
+          retention.
+        </p>
+      </div>
+      <!-- Topics List (Vertical) -->
+      <div class="flex flex-col gap-6">
+        <!-- Topic Card-->
+        {% for quiz in quizzes %}
+          <div class="flex flex-col md:flex-row bg-white  border border-slate-200  rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-full md:w-64 h-48 md:h-auto bg-center bg-no-repeat bg-cover"
+                 data-alt="Illustration of classical mechanics concepts like gears and motion"></div>
+            <div class="flex flex-1 flex-col p-6 gap-4">
+              <div class="flex justify-between items-start">
+                <div>
+                  <div class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 mb-2">
+                    Beginner
+                  </div>
+                  <h3 class="text-slate-900 text-2xl font-bold">{{ quiz.name }}</h3>
+                </div>
+                <div class="text-right">
+                  <span class="text-slate-900 text-sm font-bold">80% Complete</span>
+                </div>
+              </div>
+              <!-- Progress Bar Component -->
+              <div class="flex flex-col gap-2">
+                <div class="h-2 w-full rounded-full bg-slate-100 ">
+                  <div class="h-2 rounded-full bg-sky-600"></div>
+                </div>
+              </div>
+              <div class="mt-2 flex items-center justify-between">
+                <p class="text-slate-500 text-sm max-w-md">
+                  Focus on Newton's laws, energy conservation, and rotational
+                  dynamics.
+                </p>
+                <button class="bg-sky-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg font-semibold text-sm transition-colors flex items-center gap-2">
+                  <a href="{% url 'assessments:quiz' quiz.topic quiz.id %}">
+                    <span>Start Practice</span>
+                    <span class="material-symbols-outlined text-sm">play_arrow</span>
+                  </a>
+                </button>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <!-- Secondary CTA / Help -->
+      <div class="mt-12 p-8 border-2 border-dashed border-slate-200  rounded-xl flex flex-col items-center text-center gap-4 bg-white/50 ">
+        <span class="material-symbols-outlined text-sky-600 text-4xl">info</span>
+        <div class="flex flex-col gap-1">
+          <p class="text-slate-900 font-bold text-lg">Need more topics?</p>
+          <p class="text-slate-500  text-sm">
+            Our curriculum is updated weekly. Check back for Nuclear Physics and
+            Electromagnetism.
+          </p>
+        </div>
+        <button class="text-sky-600 text-sm font-bold hover:underline">Suggest a new topic</button>
+      </div>
+    </div>
+  </main>
+  <footer class="mt-auto py-10 border-t border-slate-200 flex justify-center">
+    <div class="w-full max-w-[960px] flex flex-col md:flex-row justify-between items-center px-4 gap-4">
+      <p class="text-slate-500  text-sm">© 2024 QuizMaster EdTech. All rights reserved.</p>
+      <div class="flex gap-6">
+        <a class="text-slate-500 text-sm hover:text-sky-600 transition-colors"
+           href="#">Privacy Policy</a>
+        <a class="text-slate-500 text-sm hover:text-sky-600 transition-colors"
+           href="#">Terms of Service</a>
+        <a class="text-slate-500  text-sm hover:text-sky-600 transition-colors"
+           href="#">Support</a>
+      </div>
+    </div>
+  </footer>
+{% endblock main %}
